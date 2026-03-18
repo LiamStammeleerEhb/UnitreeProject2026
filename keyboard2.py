@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.FATAL)
 
 MOVE_SPEED = 0.5
 TURN_SPEED = 1
+BRIGHTNESS_LVL = 1
 
 def print_controls():
     print("""
@@ -30,6 +31,8 @@ o : opstaan
 l : neerliggen
 h : hello
 x : stretch
+i : light on
+u : light off
 p : print controls
 (ctrl + c) * 2 : exit
 ============================================
@@ -125,6 +128,20 @@ def keyboard_listener(conn, loop, stop_event):
                     {"api_id": SPORT_CMD["RecoveryStand"], "parameter": {"data": False}}
                 ), loop)
 
+        elif k == "i":
+            asyncio.run_coroutine_threadsafe(
+                conn.datachannel.pub_sub.publish_request_new(
+                    RTC_TOPIC["VUI"], 
+                    {"api_id": 1005, "parameter": {"brightness": BRIGHTNESS_LVL}}
+                ), loop)
+
+        elif k == "u":
+            asyncio.run_coroutine_threadsafe(
+                conn.datachannel.pub_sub.publish_request_new(
+                    RTC_TOPIC["VUI"], 
+                    {"api_id": 1005, "parameter": {"brightness": 0}}
+                ), loop)
+
         elif k == "p":
             print_controls()
 
@@ -132,7 +149,7 @@ def keyboard_listener(conn, loop, stop_event):
 async def main():
     conn = UnitreeWebRTCConnection(
         WebRTCConnectionMethod.LocalSTA,
-        ip="10.2.172.247"
+        ip="unitree.local"
     )
 
     await conn.connect()
