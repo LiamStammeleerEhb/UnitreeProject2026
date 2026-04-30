@@ -32,7 +32,7 @@ To start the Unitree, simply hold the power button located on the battery, then 
 
 ## Starting the code
 
-### Without ArUco
+### Without ArUco Detection
 To start the robot walking without the use of the ArUco codes you need to run 2 files in separate terminals while connected to the Jetson over SSH.
 
 We recommend to first start the subscriber and then the publisher.
@@ -49,17 +49,5 @@ after Its starts running , Start the Publisher
 Ros2 run walk_in_the_park publisher
 ```
 
-### Options of using the unitree
+### With ArUco Detection
 
-## Option 1: Controlling through a laptop
-(keyboard2)
-# Controls list
-(all controls the unitree can perform)
-# Shutting down
-
-## Optione 2: Starting the automatic pathing
-# ?
-# Shutting down
-
-## Option 3?: Using the controller
-# Shutting down
