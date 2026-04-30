@@ -30,9 +30,9 @@ If you are using a hotspot or wifi network, make sure the network is running bef
 
 To start the Unitree, simply hold the power button located on the battery, then wait a minute until it stands up.
 
-### Starting the code
+## Starting the code
 
-## Without ArUco
+### Without ArUco
 To start the robot walking without the use of the ArUco codes you need to run 2 files in separate terminals while connected to the Jetson over SSH.
 
 We recommend to first start the subscriber and then the publisher.
