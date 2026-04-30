@@ -12,7 +12,6 @@ At the bottom of the popup you get an option to 'Open with GitHub Desktop', choo
 You will then get the option to **Clone a repository** (URL option selected), then choose where you want that code to be cloned to by clicking on 'Choose ...' (or leave it at the default location). Then click on 'Clone'. 
 
 ## Option 2: Terminal
-## Option 2: Terminal
 Open a terminal of your choice, navigate to the folder where you want the code to be placed, and run the following command:
 
 ```
@@ -31,6 +30,24 @@ If you are using a hotspot or wifi network, make sure the network is running bef
 
 To start the Unitree, simply hold the power button located on the battery, then wait a minute until it stands up.
 
+### Starting the code
+
+## Without ArUco
+To start the robot walking without the use of the ArUco codes you need to run 2 files in separate terminals while connected to the Jetson over SSH.
+
+We recommend to first start the subscriber and then the publisher.
+So go to your terminal and SSH into the Jetson:
+```
+ ssh jetson@(IP of the jetson)
+```
+Then start  the  Subscriber
+```
+Ros2 run walk_in_the_park subscriber
+```
+after Its starts running , Start the Publisher
+```
+Ros2 run walk_in_the_park publisher
+```
 
 ### Options of using the unitree
 
