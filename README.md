@@ -1,4 +1,4 @@
-#### UnitreeProject2026
+## UnitreeProject2026
 'Unitree Go2 Robot Dog (Quadruped Robotic)'
 > This project is meant for educational purposes.
 > Robot doggo find path using images and wolks
