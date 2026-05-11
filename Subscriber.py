@@ -232,6 +232,12 @@ class UnitreeHeadingSubscriber(Node):
                 self.get_logger().warn(f"[MARKER {marker_id}] Robot set INACTIVE")
                 print_status(False)
 
+            elif atype == "give_paw":
+                await self.conn.datachannel.pub_sub.publish_request_new(
+                    RTC_TOPIC["SPORT_MOD"],
+                    {"api_id": SPORT_CMD["Hello"]}
+                )
+
             else:
                 self.get_logger().warn(
                     f"[MARKER {marker_id}] Unknown action '{atype}', skipping."
