@@ -54,9 +54,9 @@
       "marker_id": 4,
       "trigger_distance": 2,
       "actions": [
-        { "type": "give_paw" },
-        { "type": "pause", "seconds": 0.2 },
         { "type": "stop_walk" },
+        { "type": "pause", "seconds": 0.2 },
+        { "type": "give_paw" },
         { "type": "set_inactive" }
       ]
     }
